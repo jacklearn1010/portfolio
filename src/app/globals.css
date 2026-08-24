@@ -695,12 +695,38 @@ a {
   }
 
   .code-card {
-    transform: rotate(1deg) scale(0.9);
+    width: 100%;
+    max-width: 100%;
+    transform: none;
   }
 
   .code-content {
     font-size: 9px;
   }
+
+  .code-card {
+  width: 100%;
+  max-width: 100%;
+  transform: none;
+}
+
+.code-content {
+  width: 100%;
+  padding: 20px 16px 24px;
+  font-size: 9px;
+  line-height: 1.8;
+  overflow: hidden;
+}
+
+.code-content p {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.code-content .indent {
+  padding-left: 12px;
+}
 
   .floating-badge {
     font-size: 8px;
