@@ -100,6 +100,7 @@ export default function Home() {
           </a>
         </div>
 
+        {/* Desktop Let's Talk */}
         <a
           href="#contact"
           className="nav-button"
