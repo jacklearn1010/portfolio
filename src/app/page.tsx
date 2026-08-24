@@ -633,11 +633,11 @@ export default function Home() {
             <div className="hero-socials">
               <span>Email</span>
               <a
-                href="mailto:vp9349874@gmail.com"
-                className="primary-button"
-              >
-                Email Me <span>↗</span>
-              </a>
+              href="mailto:vp9349874@gmail.com"
+              className="secondary-button"
+            >
+              Email Me <span>↗</span>
+            </a>
             </div>
           </div>
         </div>
