@@ -1,22 +1,113 @@
+"use client";
+
+import { useState } from "react";
+
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [homeUnlocked, setHomeUnlocked] = useState(false);
+
+  const closeMenu = () => setMenuOpen(false);
+
+  const navigateToSection = (id: string) => {
+    setHomeUnlocked(true);
+
+    setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView({
+        behavior: "smooth",
+      });
+    }, 50);
+
+    closeMenu();
+  };
+
   return (
-    <main className="portfolio">
+    <main
+      className={`portfolio ${
+        homeUnlocked ? "home-unlocked" : "home-locked"
+      }`}
+    >
       {/* Navbar */}
-      <nav className="navbar">
-        <a href="#" className="logo">
-          <span>&lt;</span>Vinay<span>/&gt;</span>
-        </a>
+      <nav className={`navbar ${menuOpen ? "menu-open" : ""}`}>
+        <button
+          type="button"
+          className="logo"
+          onClick={() => setMenuOpen((open) => !open)}
+          aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={menuOpen}
+        >
+          <span>&lt;</span>Vinay ≡ <span>/&gt;</span>
+        </button>
 
         <div className="nav-links">
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#experience">Experience</a>
-          <a href="#projects">Projects</a>
-          <a href="#resume">Resume</a>
-          <a href="#contact">Contact</a>
+          <a
+            href="#about"
+            onClick={(e) => {
+              e.preventDefault();
+              navigateToSection("about");
+            }}
+          >
+            About
+          </a>
+
+          <a
+            href="#skills"
+            onClick={(e) => {
+              e.preventDefault();
+              navigateToSection("skills");
+            }}
+          >
+            Skills
+          </a>
+
+          <a
+            href="#experience"
+            onClick={(e) => {
+              e.preventDefault();
+              navigateToSection("experience");
+            }}
+          >
+            Experience
+          </a>
+
+          <a
+            href="#projects"
+            onClick={(e) => {
+              e.preventDefault();
+              navigateToSection("projects");
+            }}
+          >
+            Projects
+          </a>
+
+          <a
+            href="#resume"
+            onClick={(e) => {
+              e.preventDefault();
+              navigateToSection("resume");
+            }}
+          >
+            Resume
+          </a>
+
+          <a
+            href="#contact"
+            onClick={(e) => {
+              e.preventDefault();
+              navigateToSection("contact");
+            }}
+          >
+            Contact
+          </a>
         </div>
 
-        <a href="#contact" className="nav-button">
+        <a
+          href="#contact"
+          className="nav-button"
+          onClick={(e) => {
+            e.preventDefault();
+            navigateToSection("contact");
+          }}
+        >
           Let&apos;s Talk
         </a>
       </nav>
@@ -148,10 +239,22 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="hero-scroll">
+        <button
+          type="button"
+          className="hero-scroll"
+          onClick={() => {
+            setHomeUnlocked(true);
+
+            setTimeout(() => {
+              document.getElementById("about")?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }, 50);
+          }}
+        >
           <span>Scroll to explore</span>
           <span className="scroll-line" />
-        </div>
+        </button>
       </section>
 
       {/* About */}
