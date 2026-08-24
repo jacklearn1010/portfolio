@@ -399,14 +399,14 @@ a {
 }
 
 .badge-one {
-  left: -5px;
-  top: 24%;
+  left: -45px;
+  top: 8%;
   transform: rotate(-5deg);
 }
 
 .badge-two {
-  bottom: 23%;
-  right: -8px;
+  bottom: 18%;
+  right: -35px;
   transform: rotate(4deg);
 }
 
@@ -616,10 +616,14 @@ a {
     display: none;
   }
 
-  .hero {
-    grid-template-columns: 1fr;
-    padding: 55px 24px 100px;
-  }
+.hero {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 70px);
+  height: auto;
+  overflow: visible;
+  padding: 30px 20px 60px;
+}
 
   .hero-content {
     max-width: 700px;
@@ -667,8 +671,8 @@ a {
 
   .hero {
     min-height: calc(100vh - 70px);
-    height: calc(100vh - 70px);
-    padding-top: 55px;
+    height: auto;
+    padding-top: 30px;
   }
 
   .hero h1 {
@@ -690,14 +694,23 @@ a {
     margin-top: 42px;
   }
 
-  .hero-visual {
-    min-height: 340px;
-  }
+.hero-visual {
+  display: flex;
+  width: 100%;
+  min-height: 0;
+  height: auto;
+  margin-top: 45px;
+  padding: 0 0 30px;
+  overflow: visible;
+}
 
 .code-card {
   width: 100%;
   max-width: 100%;
+  margin: 0;
   transform: none;
+  position: relative;
+  z-index: 2;
 }
 
 .code-content {
@@ -1313,31 +1326,69 @@ a {
 }
 
 @media (max-width: 480px) {
-  .code-card {
-    width: 100%;
-    max-width: 100%;
-    transform: none;
+  .home-locked {
+    overflow: hidden;
   }
 
-  .code-content {
+  .home-locked .hero {
+    height: 100vh;
+    min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: block;
+    padding: 35px 20px 80px;
+  }
+
+  .home-locked .hero-visual {
+    display: flex;
     width: 100%;
-    padding: 20px 16px 24px;
-    font-size: 10px;
-    line-height: 1.8;
+    min-height: auto;
+    height: auto;
+    margin-top: 35px;
+    padding: 0 0 30px;
     overflow: visible;
   }
 
-  .code-content p {
+  .home-locked .code-card {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    transform: none;
+    overflow: hidden;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .home-locked .code-content {
+    display: block;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    padding: 18px 14px 22px;
+    font-size: 9px;
+    line-height: 1.8;
+    overflow: hidden;
+  }
+
+  .home-locked .code-content p {
+    display: block;
+    width: 100%;
+    margin: 0;
     white-space: normal;
     overflow-wrap: anywhere;
     word-break: break-word;
   }
 
-  .code-content .indent {
-    padding-left: 12px;
+  .home-locked .code-content .indent {
+    padding-left: 10px;
   }
 
-  .floating-badge {
-    font-size: 8px;
+@media (max-width: 768px) {
+  .hero-visual > .floating-badge {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
   }
+}
 }
