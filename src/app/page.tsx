@@ -129,7 +129,7 @@ export default function Home() {
 
           <p className="hero-description">
             I&apos;m Vinay Pandey, an Infrastructure Services professional
-            with 1.9+ years of experience across enterprise Linux and Windows
+            with 2+ years of experience across enterprise Linux and Windows
             environments, production support, high availability, monitoring,
             and infrastructure automation.
           </p>
@@ -275,7 +275,7 @@ export default function Home() {
           <div className="about-text">
             <p>
               I&apos;m Vinay Pandey, currently working in Infrastructure
-              Services, with 1.9+ years of hands-on experience across
+              Services, with 2+ years of hands-on experience across
               enterprise Linux and Windows environments.
             </p>
 
@@ -464,7 +464,7 @@ export default function Home() {
           <article className="experience-item">
             <div className="experience-meta">
               <span>02</span>
-              <span>Jan 2026 — Present</span>
+              <span>Jan 2026 — Aug 2026</span>
             </div>
 
             <div className="experience-content">
