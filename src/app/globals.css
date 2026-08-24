@@ -694,17 +694,7 @@ a {
     min-height: 340px;
   }
 
-  .code-card {
-    width: 100%;
-    max-width: 100%;
-    transform: none;
-  }
-
-  .code-content {
-    font-size: 9px;
-  }
-
-  .code-card {
+.code-card {
   width: 100%;
   max-width: 100%;
   transform: none;
@@ -713,9 +703,9 @@ a {
 .code-content {
   width: 100%;
   padding: 20px 16px 24px;
-  font-size: 9px;
+  font-size: 10px;
   line-height: 1.8;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .code-content p {
@@ -728,9 +718,9 @@ a {
   padding-left: 12px;
 }
 
-  .floating-badge {
-    font-size: 8px;
-  }
+.floating-badge {
+  font-size: 8px;
+}
 
   .badge-one {
     left: -4px;
@@ -1320,4 +1310,34 @@ a {
   background: var(--accent);
   border-color: var(--accent);
   color: var(--background);
+}
+
+@media (max-width: 480px) {
+  .code-card {
+    width: 100%;
+    max-width: 100%;
+    transform: none;
+  }
+
+  .code-content {
+    width: 100%;
+    padding: 20px 16px 24px;
+    font-size: 10px;
+    line-height: 1.8;
+    overflow: visible;
+  }
+
+  .code-content p {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .code-content .indent {
+    padding-left: 12px;
+  }
+
+  .floating-badge {
+    font-size: 8px;
+  }
 }
