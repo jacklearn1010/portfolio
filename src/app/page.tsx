@@ -135,11 +135,25 @@ export default function Home() {
           </p>
 
           <div className="hero-actions">
-            <a href="#experience" className="primary-button">
+            <a
+              href="#experience"
+              className="primary-button"
+              onClick={(e) => {
+                e.preventDefault();
+                navigateToSection("experience");
+              }}
+            >
               View Experience <span>↗</span>
             </a>
 
-            <a href="#projects" className="secondary-button">
+            <a
+              href="#projects"
+              className="secondary-button"
+              onClick={(e) => {
+                e.preventDefault();
+                navigateToSection("projects");
+              }}
+            >
               View Project
             </a>
           </div>
